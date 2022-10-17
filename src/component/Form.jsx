@@ -5,9 +5,9 @@ import { useDispatch, useSelector } from 'react-redux';
 
 
 export default function Form2() {
-    
-     const dispatch=useDispatch();
-     const {value} = useSelector((state)=>state.custom)
+
+    const dispatch = useDispatch();
+    const { value } = useSelector((state) => state.custom)
 
 
 
@@ -26,15 +26,12 @@ export default function Form2() {
         else {
 
             // const alldata = { id: new Date().getTime().toString(), data: name }
-           dispatch({
-               type: "addvalue",
-               payload:name
+            dispatch({
+                type: "addvalue",
+                payload: name
 
 
-           });
-
-
-           
+            });
 
             setName('');
         }
@@ -44,18 +41,16 @@ export default function Form2() {
 
     const del = (index) => {
 
-       
-       dispatch({
-         type:"delete",
-         id:index
+        dispatch({
+            type: "delete",
+            payload: index
 
-       })
-       
+        })
 
     }
 
     const edit = (index) => {
-       
+
         const newtodos = [...value];
 
         setName(newtodos[index]);
@@ -67,17 +62,17 @@ export default function Form2() {
 
     const update = (event) => {
         event.preventDefault();
-       
-       
+
+
 
         dispatch({
             type: "updatevalue",
-            payload:name,
-            id:selectedid
+            payload: name,
+            id: selectedid
 
         });
 
-        
+
         setUpdate(true);
         setName('');
     }
@@ -94,11 +89,11 @@ export default function Form2() {
                         onChange={(e) => setName(e.target.value)}
                     />
                 </label>
-                
+
                 {Update ? <button onClick={func}>showit</button> :
 
-                   <button onClick={update}>update</button>}
-                
+                    <button onClick={update}>update</button>}
+
 
 
             </form>
@@ -109,7 +104,7 @@ export default function Form2() {
 
                         <div key={index}>
                             <div>{item}
-                             <button onClick={() => del(index)}>delete</button>
+                                <button onClick={() => del(index)}>delete</button>
                                 <button onClick={() => edit(index)}>edit</button>
 
 

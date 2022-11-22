@@ -1,10 +1,19 @@
 import { createReducer } from "@reduxjs/toolkit";
 
+
+
+
+// const getlocalitems=()=>{
+//   const list =localStorage.getItem('list')
+//   if(list){
+//     return JSON.parse(localStorage.getItem('list'));
+//   }
+// }
+
 const initialstate = {
-  value: [],
+  value:[]
 
 }
-
 
 export const customreducer = createReducer(initialstate, {
   addvalue: (state, action) => {
@@ -13,6 +22,7 @@ export const customreducer = createReducer(initialstate, {
       ...state,
       value: [...state.value, action.payload],
     };
+    
   },
   updatevalue: (state, action) => {
 

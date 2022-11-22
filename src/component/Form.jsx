@@ -11,6 +11,10 @@ export default function Form2() {
 
 
 
+
+    const [username, setUsername] = useState("");
+   
+
     const [name, setName] = useState("");
     // const [Value, setValue] = useState([]);
     const [Update, setUpdate] = useState(true);
@@ -78,9 +82,47 @@ export default function Form2() {
     }
 
 
+    // const usernamefunc=(e)=>{
+    //     e.preventDefault();
+    //   localStorage.setItem("list",name);
+        
+    //  setUsername((localStorage.getItem("list")))
+
+    // }
+
+
+
+
 
     return (
         <>
+
+        <div>
+            <h3>{username}</h3>
+        </div>
+   <div>
+
+   {/* <form className='form'>
+                <label>Enter your username:
+                    <input
+                        type="text"
+                     name='username'
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                </label>
+
+                <button onClick={usernamefunc}>username</button> :
+
+                  
+
+
+
+            </form> */}
+   </div>
+
+
+
+
             <form className='form'>
                 <label>Enter your name:
                     <input
